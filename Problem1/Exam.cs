@@ -38,7 +38,7 @@ namespace Problem1
             {
                 s.Append($"Question { i + 1}:\n {questions[i].Head} ({questions[i].Marks} marks)\n");
             }
-            return base.ToString();
+            return s.ToString();
         }
     }
 }
