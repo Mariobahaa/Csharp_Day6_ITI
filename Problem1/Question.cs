@@ -8,9 +8,9 @@ namespace Problem1
 {
     abstract class Question
     {
-        public String Head { get;  }
+        public String Head { get; set; }
 
-        public decimal Marks { get;  } 
+        public decimal Marks { get; set; } 
 
         public bool Answered { get; set; } = false;
 
