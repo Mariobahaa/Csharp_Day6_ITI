@@ -14,7 +14,7 @@ namespace Problem1
         {
             for (int i = 0; i < numOfQuestions; i++)
             {
-                Console.WriteLine($"Question {i}:");
+                Console.WriteLine($"Question {i+1}:");
                 Console.WriteLine($"{questions[i].Head} ({questions[i].Marks} marks)");
                
                 Console.WriteLine("");
