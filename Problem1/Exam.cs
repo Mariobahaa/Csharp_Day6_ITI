@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Problem1
 {
-    abstract class Exam
+    abstract class Exam 
     {
         public float Time { get; }
 
@@ -16,6 +16,8 @@ namespace Problem1
 
         public Subject Subject { get; set; }
         abstract public void showExam();
+
+ 
 
         public Exam(float t, int n, Question[] q, Subject s)
         {
@@ -29,5 +31,14 @@ namespace Problem1
             Subject = s;
         }
 
+        public override string ToString()
+        {
+            StringBuilder s = new StringBuilder("", 500);
+            for (int i = 0; i < numOfQuestions; i++)
+            {
+                s.Append($"Question { i + 1}:\n {questions[i].Head} ({questions[i].Marks} marks)\n");
+            }
+            return base.ToString();
+        }
     }
 }

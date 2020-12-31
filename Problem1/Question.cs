@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Problem1
 {
     abstract class Question
@@ -23,6 +24,11 @@ namespace Problem1
             Head = h;
             Marks = m;
             answer = new Answer(ans);
+        }
+
+        public override string ToString()
+        {
+            return $"{Head} ({Marks} marks)";
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Problem1
 {
-    class PracticeExam : Exam
+    class PracticeExam : Exam, ICloneable, IComparable
     {
         bool done = false;
 
@@ -20,6 +20,21 @@ namespace Problem1
                 Console.WriteLine("");
             }
 
+        }
+
+        public object Clone()
+        {
+            Question[] q = new Question[this.numOfQuestions];
+            for (int i = 0; i < this.numOfQuestions; i++) q[i] = questions[i];
+            return new PracticeExam(this.Time, this.numOfQuestions, q, this.Subject);
+
+        }
+
+        public int CompareTo(object obj)
+        {
+            if (obj is Exam right)
+                return this.numOfQuestions - right.numOfQuestions;
+            else return 0;
         }
 
         public PracticeExam(float t, int n, Question[] q, Subject s) : base(t, n,  q,s )

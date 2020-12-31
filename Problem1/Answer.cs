@@ -15,5 +15,9 @@ namespace Problem1
             Body = ans;
         }
 
+        public override string ToString()
+        {
+            return Body;
+        }
     }
 }

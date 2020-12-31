@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Problem1
 {
-    class FinalExam : Exam
+    class FinalExam : Exam, ICloneable, IComparable
     {
         
 
@@ -22,9 +22,26 @@ namespace Problem1
 
         }
 
+        public object Clone()
+        {
+            Question[] q = new Question[this.numOfQuestions];
+            for (int i = 0; i < this.numOfQuestions; i++) q[i] = questions[i];
+            return new FinalExam(this.Time, this.numOfQuestions, q, this.Subject);
+            
+        }
+
+        public int CompareTo(object obj)
+        {
+            if (obj is Exam right)
+                return this.numOfQuestions - right.numOfQuestions;
+            else return 0;
+        }
+
         public FinalExam(float t, int n, Question[] q, Subject s) : base(t, n, q, s)
         {
             ;
         }
+
+
     }
 }
